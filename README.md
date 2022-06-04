@@ -20,7 +20,7 @@
 -   Product Listing Page
 -   Wishlist
 -   User Cart
--   User Autentication + Retailer Authenetication (FS)
+-   User Authentication + Retailer Authentication (FS)
 
 ## 🚀 Connect with me
 
