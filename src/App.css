@@ -1,13 +1,4 @@
-@import url("https://inclusive-ui.netlify.app/library/inclusive-ui.css");
-
-.App {
-	text-align: center;
-}
-
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
-}
+@import url("https://inclusive-ui.netlify.app/docs/main.css");
 
 .active {
 	font-weight: bold;

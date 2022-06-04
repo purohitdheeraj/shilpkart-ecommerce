@@ -78,7 +78,7 @@ function ProductList({ products }) {
 
 function App() {
 	return (
-		<Router>
+		<div className="container">
 			<div>
 				<nav className="navbar ">
 					<ul className="navbar-icons list-style-none list-display-inline">
@@ -107,7 +107,7 @@ function App() {
 				</nav>
 			</div>
 
-			<div className="container">
+			<div>
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route
@@ -132,7 +132,7 @@ function App() {
 					/>
 				</Routes>
 			</div>
-		</Router>
+		</div>
 	);
 }
 
