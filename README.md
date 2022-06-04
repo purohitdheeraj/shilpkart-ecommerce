@@ -6,7 +6,7 @@
 {
   "Project Name": "ShilpKart",
   "Tech Stack": "ReactJS, MockBee, Inclusive UI",
-  "description": Shilpkart is an e-commerece platform made to promote our  indegenous art and help Indian artisans to sell their products directly
+  "description": Shilpkart is an e-commerce platform made to promote our  indegenous art and help Indian artisans to sell their products directly
 }
 ```
 
