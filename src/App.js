@@ -1,24 +1,14 @@
 import React from "react";
 import Mockman from "mockman-js";
 import "./App.css";
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	Link,
-	Navigate,
-} from "react-router-dom";
-
-import { products } from "./backend/db/products";
-
+import { Routes, Route } from "react-router-dom";
 import { Home } from "./Home";
 import { About } from "./About";
-
 import { NotFound } from "./NotFound";
 import { Navbar } from "./components";
-import { ProductList } from "./pages/Products/ProductList";
-import { ProductsPage } from "./pages";
+import { Cart, ProductsPage, Wishlist } from "./pages";
 import { ProductDetail } from "./pages/Products/ProductDetail";
+import { Footer } from "./components";
 
 function App() {
 	return (
@@ -50,7 +40,14 @@ function App() {
 					path="/mockapi"
 					element={<Mockman />}
 				/>
+				<Route path="/cart" element={<Cart />} />
+				<Route
+					path="/wishlist"
+					element={<Wishlist />}
+				/>
 			</Routes>
+
+			<Footer />
 		</div>
 	);
 }

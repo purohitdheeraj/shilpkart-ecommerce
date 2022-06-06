@@ -16,3 +16,19 @@
 body {
 	font-size: 1.6rem;
 }
+
+.footer {
+	font-family: var(--font-poppins);
+	background: var(--DARKEST-GRAY);
+	color: var(--NEUTRAL);
+	justify-content: space-around;
+}
+
+.footer nav li span {
+	color: var(--NEUTRAL);
+}
+
+.footer a {
+	color: var(--NEUTRAL);
+	text-decoration: none;
+}

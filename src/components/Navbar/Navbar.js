@@ -35,25 +35,25 @@ const Navbar = () => {
 					</li>
 
 					<li>
-						<a href="#">
+						<NavLink to="/user">
 							<span>
 								<i className="fas fa-user "></i>
 							</span>
-						</a>
+						</NavLink>
 					</li>
 					<li>
-						<a href="#">
+						<NavLink to="/wishlist">
 							<span>
 								<i className="fas fa-heart"></i>
 							</span>
-						</a>
+						</NavLink>
 					</li>
 					<li>
-						<a href="#">
+						<NavLink to="/cart">
 							<span>
 								<i className="fas fa-shopping-cart"></i>
 							</span>
-						</a>
+						</NavLink>
 					</li>
 				</ul>
 			</div>
