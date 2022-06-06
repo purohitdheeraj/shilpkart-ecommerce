@@ -3,3 +3,16 @@
 .active {
 	font-weight: bold;
 }
+
+.navbar {
+	z-index: 1;
+}
+
+.navbar-logo {
+	width: 8rem;
+	padding: 8px;
+}
+
+body {
+	font-size: 1.6rem;
+}

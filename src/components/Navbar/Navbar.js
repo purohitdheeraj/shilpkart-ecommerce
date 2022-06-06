@@ -1,36 +1,63 @@
 import { NavLink } from "react-router-dom";
+import logo from "./logo.jpg";
 
 const Navbar = () => {
 	return (
-		<div>
-			<div>
-				<nav className="navbar ">
-					<ul className="navbar-icons list-style-none list-display-inline">
-						<li>
-							<NavLink to="/">Home</NavLink>
-						</li>
-
-						<li>
-							<NavLink to="/about">
-								About
-							</NavLink>
-						</li>
-
-						<li>
-							<NavLink to="/contact">
-								Contact
-							</NavLink>
-						</li>
-
-						<li>
-							<NavLink to="/products">
-								Products
-							</NavLink>
-						</li>
-					</ul>
-				</nav>
+		<nav className="navbar ">
+			<div className="navbar-left">
+				<NavLink to="/">
+					<div className="navbar-logo">
+						<img
+							className="responsive-image round-image"
+							src={logo}
+							alt=""
+						/>
+						<small className="text-center">
+							SHILPKART शिल्पकार्त
+						</small>
+					</div>
+				</NavLink>
 			</div>
-		</div>
+			<div className="navbar-right">
+				<ul className="navbar-icons list-style-none list-display-inline">
+					<li>
+						<NavLink to="/">Home</NavLink>
+					</li>
+
+					<li>
+						<NavLink to="/about">About</NavLink>
+					</li>
+
+					<li>
+						<NavLink to="/products">
+							Products
+						</NavLink>
+					</li>
+
+					<li>
+						<a href="#">
+							<span>
+								<i className="fas fa-user "></i>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>
+								<i className="fas fa-heart"></i>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>
+								<i className="fas fa-shopping-cart"></i>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 	);
 };
 
