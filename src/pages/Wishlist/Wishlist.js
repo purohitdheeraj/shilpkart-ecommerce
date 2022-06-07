@@ -1,5 +1,11 @@
+import { useWishListContext } from "../../context/wislistContext";
+
 const Wishlist = () => {
-	return <div>your divine wishlist</div>;
+	const { wishlist } = useWishListContext();
+
+	console.log(wishlist);
+
+	return <div>your divine wishlist{wishlist}</div>;
 };
 
 export { Wishlist };
