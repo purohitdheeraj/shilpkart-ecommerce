@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { useWishlistContext } from "../../context/wislistContext";
 import logo from "./logo.jpg";
 
 const Navbar = () => {
+	const { wishlistState } = useWishlistContext();
+	console.log(wishlistState);
+
 	return (
 		<nav className="navbar ">
 			<div className="navbar-left">
@@ -44,7 +48,16 @@ const Navbar = () => {
 					<li>
 						<NavLink to="/wishlist">
 							<span>
-								<i className="fas fa-heart"></i>
+								<div class="badge__container">
+									<i className="fas fa-heart fa-2x"></i>
+									<span class="badge badge-icon badge-status-number">
+										{
+											wishlistState
+												.wishlist
+												.length
+										}
+									</span>
+								</div>
 							</span>
 						</NavLink>
 					</li>

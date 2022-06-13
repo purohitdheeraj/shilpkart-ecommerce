@@ -10,6 +10,7 @@ export function ProductList({ products }) {
 			<ul className="card-container list-style-none">
 				{products.map((product) => (
 					<ProductCard
+						buttonProp="Add To Wishlist"
 						key={product._id}
 						product={product}
 					/>

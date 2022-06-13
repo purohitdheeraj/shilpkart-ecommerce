@@ -1,16 +1,21 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+import { useWishlistContext } from "../../context/wislistContext";
+
+const ProductCard = ({ product, buttonProp }) => {
 	const { title, price, description, imgSrc, ratings } =
 		product;
+
+	const { wishlistDispatch } = useWishlistContext();
+
 	return (
 		<>
 			<li className="card text-center">
 				<div className="card-text">
 					<h6 className="h6">
-						<NavLink to={`./${product._id}`}>
-							{product.title}
-						</NavLink>
+						{title}
+						{/* <NavLink to={`./${product._id}`}>
+						</NavLink> */}
 					</h6>
 
 					<p className="p-sm text-left">
@@ -26,8 +31,20 @@ const ProductCard = ({ product }) => {
 					<a
 						className="btn btn-primary-outline"
 						role="button"
+						onClick={() =>
+							buttonProp === "Add To Wishlist"
+								? wishlistDispatch({
+										type: "ADD_TO_WISHLIST",
+										payload: product,
+								  })
+								: wishlistDispatch({
+										type: "REMOVE_FROM_WISHLIST",
+										payload:
+											product._id,
+								  })
+						}
 					>
-						Add To Wishlist
+						{buttonProp}
 					</a>
 
 					<div className="text-left">

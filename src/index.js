@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
-import { WishListProvider } from "./context/wislistContext";
+import { WishlistProvider } from "./context/wislistContext";
 
 // Call make Server
 makeServer();
@@ -12,9 +12,9 @@ makeServer();
 ReactDOM.render(
 	<React.StrictMode>
 		<Router>
-			<WishListProvider>
+			<WishlistProvider>
 				<App />
-			</WishListProvider>
+			</WishlistProvider>
 		</Router>
 	</React.StrictMode>,
 	document.getElementById("root")
