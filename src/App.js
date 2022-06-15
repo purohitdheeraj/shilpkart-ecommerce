@@ -12,8 +12,9 @@ import {
 	Wishlist,
 	Home,
 	NotFound,
+	Mock,
 } from "./pages";
-import { ProductDetail } from "./pages/Products/ProductDetail";
+import { ProductDetail } from "./pages/products/ProductDetail";
 import { Footer } from "./components";
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
 					path="/signup"
 					element={<Signup />}
 				/>
+				<Route path="/mockman" element={<Mock />} />
 			</Routes>
 
 			<Footer />

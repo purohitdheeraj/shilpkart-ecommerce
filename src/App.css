@@ -17,6 +17,10 @@ body {
 	font-size: 1.6rem;
 }
 
+.container {
+	background: hsl(0deg 0% 95%);
+}
+
 .footer {
 	font-family: var(--font-poppins);
 	background: var(--DARKEST-GRAY);

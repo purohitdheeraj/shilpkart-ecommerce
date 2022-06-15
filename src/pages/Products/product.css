@@ -1,0 +1,54 @@
+/* layout of listing page */
+/* class convention
+
+prd = product
+starts with prd-main
+            prd-aside
+            prd-article
+*/
+.prd-main {
+	display: grid;
+	grid-template:
+		"sidebar main main main"
+		"sidebar main main main";
+	grid-template-columns: minmax(20%, 20rem) 1fr;
+	grid-template-rows: 100vh;
+	gap: var(--GAP-2);
+	padding: 2rem;
+}
+
+.prd-aside {
+	grid-area: sidebar;
+}
+
+.star-rating {
+	width: 100%;
+	border: none;
+}
+
+.prd-article {
+	grid-area: main;
+	min-inline-size: 60%;
+}
+
+.prd-main .card-container,
+.card-container {
+	background: none;
+}
+
+@media only screen and (max-width: 960px) {
+	.prd-main {
+		grid-template:
+			"sidebar"
+			"main";
+		grid-template-columns: minmax(100%, 1fr);
+		grid-template-rows: minmax(min-content, 4rem) minmax(
+				100vh,
+				min-content
+			);
+	}
+	.prd-main .card-container {
+		justify-content: center;
+		background: none;
+	}
+}

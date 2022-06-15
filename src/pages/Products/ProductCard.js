@@ -14,7 +14,7 @@ const ProductCard = ({ product, buttonProp }) => {
 	);
 
 	const disableWishlist = WishlistStatus ? true : false;
-	console.log(disableWishlist);
+	// console.log(disableWishlist);
 
 	return (
 		<>

@@ -1,9 +1,13 @@
+import { NavLink } from "react-router-dom";
+import { useDocumentTitle } from "../../utils";
+
 const Signup = () => {
+	useDocumentTitle("Signup");
 	return (
 		<>
-			<div className="container">
-				<main className="main auth-wrapper">
-					<div className="modal-wrapper">
+			<main className="container">
+				<div className="auth-wrapper">
+					<div className="main modal-wrapper">
 						<div
 							className="modal modal-signup"
 							id="signupModal"
@@ -13,46 +17,34 @@ const Signup = () => {
 									<h3>SIGN UP</h3>
 
 									<div className="input-wrapper flex-column">
-										<label
-											className="input-label label-required"
-											for="correct-input"
-										>
+										<label className="input-label label-required">
+											Name
+										</label>
+
+										<input
+											className="input-field input-field-unset"
+											type="text"
+											placeholder="Enter Your Name"
+											required
+										/>
+
+										<label className="input-label label-required">
 											Email
 										</label>
 
 										<input
 											className="input-field input-field-unset"
-											id="correct-input"
-											type="text"
-											placeholder="Enter Your Email"
+											type="email"
+											placeholder="purohitdheeraj@gmail.com"
 											required
 										/>
 
-										<label
-											className="input-label label-required"
-											for="Email"
-										>
+										<label className="input-label label-required">
 											Password
 										</label>
 
 										<input
 											className="input-field input-field-unset"
-											id="correct-input"
-											type="password"
-											placeholder="*******"
-											required
-										/>
-
-										<label
-											className="input-label label-required"
-											for="Email"
-										>
-											Confirm Password
-										</label>
-
-										<input
-											className="input-field input-field-unset"
-											id="correct-input"
 											type="password"
 											placeholder="*******"
 											required
@@ -84,26 +76,20 @@ const Signup = () => {
 											/>
 										</div>
 
-										<a
-											href="#signup"
-											className="flex-row"
+										<NavLink
+											className="text-center"
+											to="/login"
 										>
 											Already have an
-											account
-											<span>
-												<i className="fa fa-greater-than"></i>
-											</span>
-										</a>
+											account ?
+										</NavLink>
 									</div>
 								</form>
-								<span className="close">
-									&times;
-								</span>
 							</div>
 						</div>{" "}
 					</div>
-				</main>
-			</div>
+				</div>
+			</main>
 		</>
 	);
 };
