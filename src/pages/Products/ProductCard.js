@@ -6,7 +6,15 @@ const ProductCard = ({ product, buttonProp }) => {
 	const { title, price, description, imgSrc, ratings } =
 		product;
 
-	const { wishlistDispatch } = useWishlistContext();
+	const { wishlistState, wishlistDispatch } =
+		useWishlistContext();
+
+	const WishlistStatus = wishlistState.wishlist.find(
+		(el) => el._id === product._id
+	);
+
+	const disableWishlist = WishlistStatus ? true : false;
+	console.log(disableWishlist);
 
 	return (
 		<>
@@ -31,6 +39,7 @@ const ProductCard = ({ product, buttonProp }) => {
 					<a
 						className="btn btn-primary-outline"
 						role="button"
+						disabled={disableWishlist}
 						onClick={() =>
 							buttonProp === "Add To Wishlist"
 								? wishlistDispatch({

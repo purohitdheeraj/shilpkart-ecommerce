@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useWishlistContext } from "../../context/wislistContext";
 import { ProductCard } from "../Products/ProductCard";
 
@@ -9,7 +10,7 @@ const Wishlist = () => {
 	console.log(wishlist);
 	return (
 		<div>
-			{wishlist && (
+			{wishlist.length > 0 ? (
 				<>
 					<div className="text-center">
 						Your Wishlist has {wishlist.length}{" "}
@@ -25,6 +26,19 @@ const Wishlist = () => {
 								/>
 							);
 						})}
+					</div>
+				</>
+			) : (
+				<>
+					<div className="text-center">
+						<h2>No items in your wishlist</h2>
+						<p className="p-md">
+							Add some Items to your Wishlist
+						</p>
+
+						<NavLink to="/products">
+							Go to Products Page
+						</NavLink>
 					</div>
 				</>
 			)}
