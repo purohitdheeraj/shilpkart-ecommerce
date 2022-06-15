@@ -39,16 +39,25 @@ const Navbar = () => {
 					</li>
 
 					<li>
-						<NavLink to="/user">
+						<NavLink to="/login">
 							<span>
 								<i className="fas fa-user "></i>
 							</span>
 						</NavLink>
 					</li>
+
+					<li>
+						<NavLink to="/signup">
+							<span>
+								<i className="fab fa-user "></i>
+							</span>
+						</NavLink>
+					</li>
+
 					<li>
 						<NavLink to="/wishlist">
 							<span>
-								<div class="badge__container">
+								<div className="badge__container">
 									<i className="fas fa-heart fa-2x"></i>
 									<span class="badge badge-icon badge-status-number">
 										{

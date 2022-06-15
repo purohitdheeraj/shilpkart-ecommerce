@@ -2,11 +2,17 @@ import React from "react";
 import Mockman from "mockman-js";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./Home";
-import { About } from "./About";
-import { NotFound } from "./NotFound";
 import { Navbar } from "./components";
-import { Cart, ProductsPage, Wishlist } from "./pages";
+import {
+	About,
+	Cart,
+	Login,
+	ProductsPage,
+	Signup,
+	Wishlist,
+	Home,
+	NotFound,
+} from "./pages";
 import { ProductDetail } from "./pages/Products/ProductDetail";
 import { Footer } from "./components";
 
@@ -44,6 +50,11 @@ function App() {
 				<Route
 					path="/wishlist"
 					element={<Wishlist />}
+				/>
+				<Route path="/login" element={<Login />} />
+				<Route
+					path="/signup"
+					element={<Signup />}
 				/>
 			</Routes>
 
