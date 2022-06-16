@@ -60,7 +60,7 @@ const Signup = () => {
 												/>
 												<label
 													className="input-label"
-													for="remember-me"
+													htmlFor="remember-me"
 												>
 													I accept
 													all
