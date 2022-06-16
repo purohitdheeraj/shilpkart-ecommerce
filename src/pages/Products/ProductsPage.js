@@ -1,3 +1,4 @@
+import React from "react";
 import { ProductList } from "./ProductList";
 import { newProducts } from "../../backend/db/newProducts";
 import { useDocumentTitle } from "../../utils";

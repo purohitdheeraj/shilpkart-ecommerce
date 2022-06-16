@@ -1,10 +1,10 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { useWishlistContext } from "../../context/wislistContext";
 import logo from "./logo.jpg";
 
 const Navbar = () => {
 	const { wishlistState } = useWishlistContext();
-	// console.log(wishlistState);
 
 	return (
 		<nav className="navbar ">

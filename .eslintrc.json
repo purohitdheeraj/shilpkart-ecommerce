@@ -1,0 +1,15 @@
+{
+	"rules": {
+		// suppress errors for missing 'import React' in files
+		"react/react-in-jsx-scope": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhuastive-deps": "warn",
+		"react/jsx-filename-extension": [
+			1,
+			{ "extensions": [".js", ".jsx"] }
+		] //should add ".ts" if typescript project
+	},
+	"plugins": ["react-hooks"],
+
+	"extends": ["plugin:react/jsx-runtime"]
+}

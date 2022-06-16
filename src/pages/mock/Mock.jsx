@@ -1,5 +1,4 @@
-// import "./mock.css";
-
+import React from "react";
 import Mockman from "mockman-js";
 import { useDocumentTitle } from "../../utils";
 

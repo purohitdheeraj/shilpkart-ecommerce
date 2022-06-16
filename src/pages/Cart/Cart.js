@@ -1,3 +1,4 @@
+import React from "react";
 import { useDocumentTitle } from "../../utils";
 const Cart = () => {
 	useDocumentTitle("Cart");

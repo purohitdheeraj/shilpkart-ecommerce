@@ -1,20 +1,25 @@
-// import { NavLink } from "react-router-dom";
-
+import React from "react";
 import { useWishlistContext } from "../../context/wislistContext";
 
 const ProductCard = ({ product, buttonProp }) => {
-	const { title, price, description, imgSrc, ratings } =
-		product;
+	const {
+		title,
+		price,
+		description,
+		imgSrc,
+		ratings,
+	} = product;
 
-	const { wishlistState, wishlistDispatch } =
-		useWishlistContext();
+	const {
+		wishlistState,
+		wishlistDispatch,
+	} = useWishlistContext();
 
 	const WishlistStatus = wishlistState.wishlist.find(
 		(el) => el._id === product._id
 	);
 
 	const disableWishlist = WishlistStatus ? true : false;
-	// console.log(disableWishlist);
 
 	return (
 		<>
@@ -43,11 +48,13 @@ const ProductCard = ({ product, buttonProp }) => {
 						onClick={() =>
 							buttonProp === "Add To Wishlist"
 								? wishlistDispatch({
-										type: "ADD_TO_WISHLIST",
+										type:
+											"ADD_TO_WISHLIST",
 										payload: product,
 								  })
 								: wishlistDispatch({
-										type: "REMOVE_FROM_WISHLIST",
+										type:
+											"REMOVE_FROM_WISHLIST",
 										payload:
 											product._id,
 								  })

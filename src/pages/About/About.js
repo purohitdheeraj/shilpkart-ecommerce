@@ -1,3 +1,4 @@
+import React from "react";
 import { useDocumentTitle } from "../../utils";
 
 export function About() {

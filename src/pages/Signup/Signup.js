@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useDocumentTitle } from "../../utils";
-
+import React from "react";
 const Signup = () => {
 	useDocumentTitle("Signup");
 	return (
