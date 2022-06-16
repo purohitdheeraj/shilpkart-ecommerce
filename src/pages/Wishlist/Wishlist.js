@@ -1,13 +1,16 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { useWishlistContext } from "../../context/wislistContext";
-import { ProductCard } from "../Products/ProductCard";
+import { useDocumentTitle } from "../../utils";
+import { ProductCard } from "../products/ProductCard";
 
 const Wishlist = () => {
+	useDocumentTitle("Wishlist");
 	const { wishlistState } = useWishlistContext();
 
 	const { wishlist } = wishlistState;
 
-	console.log(wishlist);
+	// console.log(wishlist);
 	return (
 		<div>
 			{wishlist.length > 0 ? (

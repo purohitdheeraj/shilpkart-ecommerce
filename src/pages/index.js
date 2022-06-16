@@ -1,3 +1,10 @@
-export { ProductsPage } from "./Products/ProductsPage";
-export { Wishlist } from "./Wishlist/Wishlist";
-export { Cart } from "./Cart/Cart";
+export { Home } from "./homepage/Home";
+export { Login } from "./login/Login";
+export { Signup } from "./signup/Signup";
+export { Wishlist } from "./wishlist/Wishlist";
+export { Cart } from "./cart/Cart";
+export { About } from "./about/About";
+export { NotFound } from "./notFound/NotFound";
+export { ProductsPage } from "./products/ProductsPage";
+export { ProductDetail } from "./products/ProductDetail";
+export { Mock } from "./mock/Mock";

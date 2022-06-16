@@ -1,20 +1,25 @@
-// import { NavLink } from "react-router-dom";
-
+import React from "react";
 import { useWishlistContext } from "../../context/wislistContext";
 
 const ProductCard = ({ product, buttonProp }) => {
-	const { title, price, description, imgSrc, ratings } =
-		product;
+	const {
+		title,
+		price,
+		description,
+		imgSrc,
+		ratings,
+	} = product;
 
-	const { wishlistState, wishlistDispatch } =
-		useWishlistContext();
+	const {
+		wishlistState,
+		wishlistDispatch,
+	} = useWishlistContext();
 
 	const WishlistStatus = wishlistState.wishlist.find(
 		(el) => el._id === product._id
 	);
 
 	const disableWishlist = WishlistStatus ? true : false;
-	console.log(disableWishlist);
 
 	return (
 		<>
@@ -30,24 +35,23 @@ const ProductCard = ({ product, buttonProp }) => {
 						{description}
 					</p>
 
-					<button
-						className="btn btn-primary"
-						role="button"
-					>
+					<button className="btn btn-primary">
 						Add To Cart
 					</button>
 					<a
+						href="google.com"
 						className="btn btn-primary-outline"
-						role="button"
 						disabled={disableWishlist}
 						onClick={() =>
 							buttonProp === "Add To Wishlist"
 								? wishlistDispatch({
-										type: "ADD_TO_WISHLIST",
+										type:
+											"ADD_TO_WISHLIST",
 										payload: product,
 								  })
 								: wishlistDispatch({
-										type: "REMOVE_FROM_WISHLIST",
+										type:
+											"REMOVE_FROM_WISHLIST",
 										payload:
 											product._id,
 								  })
@@ -58,7 +62,7 @@ const ProductCard = ({ product, buttonProp }) => {
 
 					<div className="text-left">
 						Price:{" "}
-						<a href="#">
+						<a href="google.com">
 							<i className="fa fa-rupee"></i>
 						</a>
 						<span className="price-tag">
