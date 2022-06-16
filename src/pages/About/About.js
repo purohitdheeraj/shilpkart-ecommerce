@@ -1,7 +1,7 @@
 import React from "react";
 import { useDocumentTitle } from "../../utils";
 
-export function About() {
+function About() {
 	useDocumentTitle("About");
 	return (
 		<>
@@ -62,3 +62,5 @@ export function About() {
 		</>
 	);
 }
+
+export { About };

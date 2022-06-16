@@ -1,4 +1,4 @@
-export { Home } from "./homepage/Home";
+export { Home } from "./homepage/Home.js";
 export { Login } from "./login/Login";
 export { Signup } from "./signup/Signup";
 export { Wishlist } from "./wishlist/Wishlist";
