@@ -6,7 +6,6 @@ import { Navbar } from "./components";
 import {
 	About,
 	Cart,
-	Login,
 	ProductsPage,
 	Signup,
 	Wishlist,
@@ -44,7 +43,7 @@ function App() {
 					path="/wishlist"
 					element={<Wishlist />}
 				/>
-				<Route path="/login" element={<Login />} />
+				{/* <Route path="/login" element={<Login />} /> */}
 				<Route
 					path="/signup"
 					element={<Signup />}
