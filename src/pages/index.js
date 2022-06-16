@@ -1,6 +1,6 @@
 export { Home } from "./homepage/Home.js";
 export { Login } from "./loginpage/Login.js";
-export { Signup } from "./signup/Signup.js";
+export { Signup } from "./signup/Signup.jsx";
 export { Wishlist } from "./wishlist/Wishlist.js";
 export { Cart } from "./cart/Cart.js";
 export { About } from "./about/About.js";
