@@ -10,7 +10,6 @@ const Wishlist = () => {
 
 	const { wishlist } = wishlistState;
 
-	// console.log(wishlist);
 	return (
 		<div>
 			{wishlist.length > 0 ? (
