@@ -5,8 +5,8 @@ import { Wishlist } from "./wishlist/Wishlist";
 import { Cart } from "./cart/Cart";
 import { About } from "./about/About";
 import { NotFound } from "./notFound/NotFound";
-import { ProductsPage } from "./products/ProductsPage";
-import { ProductDetail } from "./products/ProductDetail";
+import { ProductsPage } from "./products/ProductsPage.jsx";
+import { ProductDetail } from "./products/ProductDetail.jsx";
 import { Mock } from "./mock/Mock";
 
 export {
