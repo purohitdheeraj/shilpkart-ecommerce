@@ -15,7 +15,7 @@ const Footer = () => {
 					<li>
 						<a
 							href="https://www.linkedin.com/in/dheeraj-purohit-79ba4a168"
-							target="_blank"
+							// target="_blank"
 						>
 							<span
 								className="fab fa-linkedin fa-2x"
@@ -30,7 +30,7 @@ const Footer = () => {
 					<li>
 						<a
 							href="https://twitter.com/the_indianyoga"
-							target="_blank"
+							// target="_blank"
 						>
 							<span
 								className="fab fa-twitter fa-2x"
@@ -45,7 +45,7 @@ const Footer = () => {
 					<li>
 						<a
 							href="https://github.com/purohitdheeraj"
-							target="_blank"
+							// target="_blank"
 						>
 							<span
 								className="fab fa-github fa-2x"

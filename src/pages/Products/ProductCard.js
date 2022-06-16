@@ -35,15 +35,12 @@ const ProductCard = ({ product, buttonProp }) => {
 						{description}
 					</p>
 
-					<button
-						className="btn btn-primary"
-						role="button"
-					>
+					<button className="btn btn-primary">
 						Add To Cart
 					</button>
 					<a
+						href="google.com"
 						className="btn btn-primary-outline"
-						role="button"
 						disabled={disableWishlist}
 						onClick={() =>
 							buttonProp === "Add To Wishlist"
@@ -65,7 +62,7 @@ const ProductCard = ({ product, buttonProp }) => {
 
 					<div className="text-left">
 						Price:{" "}
-						<a href="#">
+						<a href="google.com">
 							<i className="fa fa-rupee"></i>
 						</a>
 						<span className="price-tag">

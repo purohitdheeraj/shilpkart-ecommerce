@@ -16,7 +16,7 @@ const ProductsPage = () => {
 								id="Wooden"
 								type="checkbox"
 								name="category"
-								value="Wooden"
+								// value="Wooden"
 							/>
 							<label htmlFor="Wooden">
 								Wooden
@@ -25,7 +25,7 @@ const ProductsPage = () => {
 								id="Brass"
 								type="checkbox"
 								name="category"
-								value="Brass"
+								// value="Brass"
 							/>
 							<label htmlFor="Brass">
 								Brass
@@ -34,7 +34,7 @@ const ProductsPage = () => {
 								id="Gold"
 								type="checkbox"
 								name="category"
-								value="Gold"
+								// value="Gold"
 							/>
 							<label htmlFor="Gold">
 								Gold
@@ -43,7 +43,7 @@ const ProductsPage = () => {
 								id="Silver"
 								type="checkbox"
 								name="category"
-								value="Silver"
+								// value="Silver"
 							/>
 							<label htmlFor="Silver">
 								Silver
@@ -67,7 +67,7 @@ const ProductsPage = () => {
 									type="range"
 									min="1"
 									max="100"
-									value="50"
+									// value="50"
 									className="slider input-field"
 								/>
 							</div>
@@ -82,7 +82,7 @@ const ProductsPage = () => {
 									type="radio"
 									id="5-stars"
 									name="rating"
-									value="5"
+									// value="5"
 								/>
 								<label
 									htmlFor="5-stars"
@@ -94,7 +94,7 @@ const ProductsPage = () => {
 									type="radio"
 									id="4-stars"
 									name="rating"
-									value="4"
+									// value="4"
 								/>
 								<label
 									htmlFor="4-stars"
@@ -106,7 +106,7 @@ const ProductsPage = () => {
 									type="radio"
 									id="3-stars"
 									name="rating"
-									value="3"
+									// value="3"
 								/>
 								<label
 									htmlFor="3-stars"
@@ -118,7 +118,7 @@ const ProductsPage = () => {
 									type="radio"
 									id="2-stars"
 									name="rating"
-									value="2"
+									// value="2"
 								/>
 								<label
 									htmlFor="2-stars"
@@ -130,7 +130,7 @@ const ProductsPage = () => {
 									type="radio"
 									id="1-star"
 									name="rating"
-									value="1"
+									// value="1"
 								/>
 								<label
 									htmlFor="1-star"

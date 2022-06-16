@@ -13,35 +13,34 @@ const Login = () => {
 							className="modal modal-signup"
 							id="signupModal"
 						>
-							<div class="modal-content">
-								<form class="form-field flex-column">
+							<div className="modal-content">
+								<form className="form-field flex-column">
 									<h3>SIGN IN</h3>
 
-									<div class="input-wrapper flex-column">
+									<div className="input-wrapper flex-column">
 										<label
-											class="input-label label-required"
-											for="correct-input"
+											className="input-label label-required"
+											htmlFor="correct-input"
 										>
 											Email
 										</label>
 
 										<input
-											class="input-field input-field-unset"
-											id="correct-input"
+											className="input-field input-field-unset"
 											type="text"
 											placeholder="Enter Your Email"
 											required
 										/>
 
 										<label
-											class="input-label label-required"
-											for="Email"
+											className="input-label label-required"
+											htmlFor="Email"
 										>
 											Password
 										</label>
 
 										<input
-											class="input-field input-field-unset"
+											className="input-field input-field-unset"
 											id="correct-input"
 											type="password"
 											placeholder="*******"
@@ -49,20 +48,20 @@ const Login = () => {
 										/>
 									</div>
 
-									<div class="redirect flex-column">
-										<div class="flex-row">
+									<div className="redirect flex-column">
+										<div className="flex-row">
 											<input
 												type="checkbox"
 												id="remember-me"
 											/>
 											<label
-												class="input-label"
-												for="remember-me"
+												className="input-label"
+												htmlFor="remember-me"
 											>
 												Remember me
 											</label>
 
-											<a>
+											<a href="google.com">
 												Login as a
 												Guest
 											</a>
@@ -71,7 +70,7 @@ const Login = () => {
 
 									<input
 										type="submit"
-										class="btn btn-primary form-submit"
+										className="btn btn-primary form-submit"
 										value="Sign In"
 									/>
 									<NavLink
