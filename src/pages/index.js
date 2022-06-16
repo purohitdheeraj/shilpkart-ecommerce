@@ -1,5 +1,5 @@
-export { Home } from "./homepage/Home.js";
-export { Login } from "./login/Login";
+export { Home } from "./homepage/Home";
+// export { Login } from "./loginpage/Login";
 export { Signup } from "./signup/Signup";
 export { Wishlist } from "./wishlist/Wishlist";
 export { Cart } from "./cart/Cart";

@@ -10,7 +10,7 @@ import {
 	Signup,
 	Wishlist,
 	Home,
-	Login,
+	// Login,
 	NotFound,
 	Mock,
 	ProductDetail,
@@ -44,7 +44,7 @@ function App() {
 					path="/wishlist"
 					element={<Wishlist />}
 				/>
-				<Route path="/login" element={<Login />} />
+				{/* <Route path="/login" element={<Login />} /> */}
 				<Route
 					path="/signup"
 					element={<Signup />}

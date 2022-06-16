@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDocumentTitle } from "../../utils";
 
-const Login = () => {
+export const Login = () => {
 	useDocumentTitle("Login");
 	return (
 		<>
@@ -89,5 +89,3 @@ const Login = () => {
 		</>
 	);
 };
-
-export { Login };
