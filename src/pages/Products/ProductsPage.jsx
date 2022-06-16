@@ -3,6 +3,7 @@ import { ProductList } from "./ProductList";
 import { newProducts } from "../../backend/db/newProducts";
 import { useDocumentTitle } from "../../utils";
 import "./product.css";
+
 const ProductsPage = () => {
 	useDocumentTitle("Products");
 	return (
