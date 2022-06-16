@@ -13,8 +13,8 @@ import {
 	Home,
 	NotFound,
 	Mock,
+	ProductDetail,
 } from "./pages";
-import { ProductDetail } from "./pages/products/ProductDetail";
 import { Footer } from "./components";
 
 function App() {
@@ -29,14 +29,6 @@ function App() {
 					path="/products/*"
 					element={<ProductsPage />}
 				/>
-				{/* <Route
-					path="/products/*"
-					element={
-						<ProductList
-							products={newProducts}
-						/>
-					}
-				/> */}
 
 				<Route
 					path="/products/:_id"

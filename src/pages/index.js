@@ -6,4 +6,5 @@ export { Cart } from "./cart/Cart";
 export { About } from "./about/About";
 export { NotFound } from "./notFound/NotFound";
 export { ProductsPage } from "./products/ProductsPage";
+export { ProductDetail } from "./products/ProductDetail";
 export { Mock } from "./mock/Mock";
