@@ -5,6 +5,6 @@ export { Wishlist } from "./wishlist/Wishlist";
 export { Cart } from "./cart/Cart";
 export { About } from "./about/About";
 export { NotFound } from "./notFound/NotFound";
-export { ProductsPage } from "./products/ProductsPage";
+export { ProductsPage } from "./Products/ProductsPage";
 export { ProductDetail } from "./product-details/ProductDetail";
 export { Mock } from "./mock/Mock";
