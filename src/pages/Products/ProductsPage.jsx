@@ -1,5 +1,6 @@
 import React from "react";
-import { ProductList } from "./ProductList";
+
+import { ProductList } from "../../components";
 import { newProducts } from "../../backend/db/newProducts";
 import { useDocumentTitle } from "../../utils";
 import "./product.css";

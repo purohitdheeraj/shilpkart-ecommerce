@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useWishlistContext } from "../../context/wislistContext";
 import { useDocumentTitle } from "../../utils";
-import { ProductCard } from "../products/ProductCard";
+import { ProductCard } from "../../components/products/ProductCard";
 
 const Wishlist = () => {
 	useDocumentTitle("Wishlist");

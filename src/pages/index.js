@@ -1,23 +1,10 @@
-import { Home } from "./homepage/Home";
-import { Login } from "./loginpage/Login";
-import { Signup } from "./signup/Signup";
-import { Wishlist } from "./wishlist/Wishlist";
-import { Cart } from "./cart/Cart";
-import { About } from "./about/About";
-import { NotFound } from "./notFound/NotFound";
-import { ProductsPage } from "./products/ProductsPage.jsx";
-import { ProductDetail } from "./products/ProductDetail.jsx";
-import { Mock } from "./mock/Mock";
-
-export {
-	Home,
-	Login,
-	Signup,
-	Wishlist,
-	Cart,
-	About,
-	NotFound,
-	ProductsPage,
-	ProductDetail,
-	Mock,
-};
+export { Home } from "./homepage/Home";
+export { Login } from "./loginpage/Login";
+export { Signup } from "./signup/Signup";
+export { Wishlist } from "./wishlist/Wishlist";
+export { Cart } from "./cart/Cart";
+export { About } from "./about/About";
+export { NotFound } from "./notFound/NotFound";
+export { ProductsPage } from "./products/ProductsPage";
+export { ProductDetail } from "./product-details/ProductDetail";
+export { Mock } from "./mock/Mock";
