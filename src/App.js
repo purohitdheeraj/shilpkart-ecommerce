@@ -3,7 +3,7 @@ import Mockman from "mockman-js";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
-import{ 
+import {
 	About,
 	Cart,
 	ProductsPage,

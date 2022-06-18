@@ -24,7 +24,7 @@ const Wishlist = () => {
 								<ProductCard
 									key={el._id}
 									product={el}
-									buttonProp="Remove From Wishlist"
+									wishlistButtonProp="Remove From Wishlist"
 								/>
 							);
 						})}

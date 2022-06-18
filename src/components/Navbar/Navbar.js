@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { UseCartContext } from "../../context/cartContext";
 import { useWishlistContext } from "../../context/wislistContext";
 import logo from "./logo.jpg";
 
 const Navbar = () => {
 	const { wishlistState } = useWishlistContext();
+	const { cart } = UseCartContext();
 
 	return (
 		<nav className="navbar ">
@@ -65,7 +67,12 @@ const Navbar = () => {
 					<li>
 						<NavLink to="/cart">
 							<span>
-								<i className="fas fa-shopping-cart fa-2x fa-fw"></i>
+								<div className="badge__container">
+									<i className="fas fa-shopping-cart fa-2x fa-fw"></i>
+									<span className="badge badge-icon badge-status-number">
+										{cart.length}
+									</span>
+								</div>
 							</span>
 						</NavLink>
 					</li>
