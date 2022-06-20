@@ -1,4 +1,4 @@
-[] dimensions of products, outOfStock, home delivery
+[] fix data: dimensions of products, outOfStock, home delivery
 [] authentication
 [] api calls
 [] wishlist

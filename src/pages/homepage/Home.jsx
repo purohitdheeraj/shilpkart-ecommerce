@@ -44,12 +44,13 @@ export const Home = () => {
 				</h2>
 				<section className="row new-products">
 					<article className="prd-article flex-column">
-						<ul className="card-container list-style-none">
+						<ul className="card-container list-style-none ">
 							{products &&
 								products.map((item) => (
 									<ProductCard
 										key={item._id}
 										product={item}
+										homeSpaProp="products"
 									/>
 								))}
 						</ul>

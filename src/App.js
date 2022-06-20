@@ -1,6 +1,5 @@
 import React from "react";
 import Mockman from "mockman-js";
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
 import {
@@ -16,6 +15,7 @@ import {
 	ProductDetail,
 } from "./pages";
 import { Footer } from "./components";
+import "./App.css";
 
 function App() {
 	return (
@@ -30,6 +30,7 @@ function App() {
 					element={<ProductsPage />}
 				/>
 
+				{/* SPA */}
 				<Route
 					path="/products/:_id"
 					element={<ProductDetail />}
@@ -51,7 +52,6 @@ function App() {
 				/>
 				<Route path="/mockman" element={<Mock />} />
 			</Routes>
-
 			<Footer />
 		</div>
 	);

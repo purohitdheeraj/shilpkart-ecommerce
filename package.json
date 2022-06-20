@@ -5,6 +5,7 @@
 	"lint": "--fix",
 	"dependencies": {
 		"dayjs": "^1.11.2",
+		"framer-motion": "^6.3.11",
 		"jwt-decode": "^3.1.2",
 		"jwt-encode": "^1.0.1",
 		"miragejs": "^0.1.44",

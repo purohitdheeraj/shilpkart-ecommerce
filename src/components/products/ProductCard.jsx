@@ -1,11 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { UseCartContext } from "../../context/cartContext";
 import { useWishlistContext } from "../../context/wislistContext";
-
+import './productCard.css'
 const ProductCard = ({
 	product,
 	wishlistButtonProp,
 	cartButtonProp,
+	homeSpaProp,
 }) => {
 	const {
 		title,
@@ -31,17 +33,14 @@ const ProductCard = ({
 	const CartStatus = cart.find(
 		(item) => item._id === product._id
 	);
+
 	const disableCart = CartStatus ? true : false;
 
 	return (
 		<>
 			<li className="card text-center">
 				<div className="card-text">
-					<h6 className="h6">
-						{title}
-						{/* <NavLink to={`./${product._id}`}>
-						</NavLink> */}
-					</h6>
+					<h6 className="h6">{title}</h6>
 
 					<p className="p-sm text-left">
 						{description}
@@ -117,7 +116,18 @@ const ProductCard = ({
 					</div>
 				</div>
 				<div className="card-cover badge-container">
-					<img src={imgSrc} alt={title} />
+					{homeSpaProp ? (
+						<NavLink
+							to={`./products/${product._id}`}
+						>
+							<img src={imgSrc} alt={title} />
+						</NavLink>
+					) : (
+						<NavLink to={`./${product._id}`}>
+							<img src={imgSrc} alt={title} />
+						</NavLink>
+					)}
+
 					<div className="badge badge-top">
 						New
 					</div>

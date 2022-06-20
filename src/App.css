@@ -11,8 +11,12 @@
 }
 
 .navbar-logo {
-	width: 8rem;
+	width: 6rem;
 	padding: 8px;
+}
+
+.navbar-left{
+	gap: 1rem;
 }
 
 body {

@@ -8,6 +8,8 @@ const Navbar = () => {
 	const { wishlistState } = useWishlistContext();
 	const { cart } = UseCartContext();
 
+	const text = "SHILPKART शिल्पकार्त";
+
 	return (
 		<nav className="navbar ">
 			<div className="navbar-left">
@@ -18,11 +20,11 @@ const Navbar = () => {
 							src={logo}
 							alt=""
 						/>
-						<small className="text-center">
-							SHILPKART शिल्पकार्त
-						</small>
 					</div>
 				</NavLink>
+				<small className="text-center">
+					SHILPKART | शिल्पकार्त
+				</small>
 			</div>
 			<div className="navbar-right">
 				<ul className="navbar-icons list-style-none list-display-inline flex-row">
@@ -53,7 +55,7 @@ const Navbar = () => {
 							<span>
 								<div className="badge__container">
 									<i className="fa fa-heart fa-2x fa-fw"></i>
-									<span className="badge badge-icon badge-status-number">
+									<span className="btn-primary badge badge-icon badge-status-number">
 										{
 											wishlistState
 												.wishlist
@@ -69,7 +71,7 @@ const Navbar = () => {
 							<span>
 								<div className="badge__container">
 									<i className="fas fa-shopping-cart fa-2x fa-fw"></i>
-									<span className="badge badge-icon badge-status-number">
+									<span className="btn-primary badge badge-icon badge-status-number">
 										{cart.length}
 									</span>
 								</div>

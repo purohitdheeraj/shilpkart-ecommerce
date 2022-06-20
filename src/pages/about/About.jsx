@@ -24,7 +24,7 @@ export function About() {
 
 					<div className="row flex-column">
 						<h2>
-							How unique is Indian Shipkala ?
+							How unique is Indian Shilpkala ?
 						</h2>
 						<p>
 							The evolution and development of
