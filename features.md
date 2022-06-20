@@ -1,4 +1,4 @@
-[] complete markup of ecommerce (html css)
+[] dimensions of products, outOfStock, home delivery
 [] authentication
 [] api calls
 [] wishlist

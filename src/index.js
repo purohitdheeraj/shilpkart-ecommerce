@@ -6,6 +6,7 @@ import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
 import { WishlistProvider } from "./context/wislistContext";
 import { CartProvider } from "./context/cartContext";
+import { CommonDataProvider } from "./context/dataContext";
 
 const container = document.getElementById("root");
 
@@ -17,11 +18,13 @@ const root = createRoot(container);
 root.render(
 	<React.StrictMode>
 		<Router>
-			<CartProvider>
-				<WishlistProvider>
-					<App />
-				</WishlistProvider>
-			</CartProvider>
+			<CommonDataProvider>
+				<CartProvider>
+					<WishlistProvider>
+						<App />
+					</WishlistProvider>
+				</CartProvider>
+			</CommonDataProvider>
 		</Router>
 	</React.StrictMode>
 );

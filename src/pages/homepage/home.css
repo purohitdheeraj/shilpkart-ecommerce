@@ -1,0 +1,55 @@
+/* .hm-main */
+.hm-main {
+	font-family: var(--font-montserrat);
+	min-block-size: 100vh;
+	max-inline-size: 100%;
+	line-height: 1.1;
+	background: var(--NEUTRAL);
+	display: flex;
+	flex-direction: column;
+}
+
+.hm-main > .row {
+	padding: 2rem;
+}
+
+.hm-main > .new-products {
+	padding: 0;
+}
+
+/* my fav owl operator :D */
+.hm-main > * + * {
+	margin-top: 2.4rem;
+	margin-bottom: 2.4rem;
+}
+
+.row-heading {
+	margin: 2rem 0;
+	padding: 1rem;
+	border-bottom: thin solid;
+}
+
+.categories {
+	margin-block-end: 0.75rem;
+	padding: 0;
+	max-inline-size: 100%;
+	gap: var(--TWO-REM);
+	margin: 0 auto;
+	justify-content: center;
+}
+.card-container {
+	justify-content: center;
+}
+
+.type img {
+	height: auto;
+	aspect-ratio: 1/1;
+	object-fit: contain;
+}
+
+.type-text {
+	color: var(--NEUTRAL);
+	background: var(--DARKEST-GRAY);
+	padding: 5px;
+	font-weight: 600;
+}

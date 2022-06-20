@@ -20,6 +20,8 @@ import krishna from './marble/krishna.jpg'
 
 import hanuman from './gold/hanuman.jpg'
 
+import cover from './website/cover.jpg'
+
 // categories export
 export {wooden, gold, stone, marble, silver, brass}
 
@@ -27,3 +29,5 @@ export {wooden, gold, stone, marble, silver, brass}
 export {
     cowSilver,sitaRam, krishna, hanuman
 }
+
+export {cover}

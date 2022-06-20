@@ -1,12 +1,13 @@
 import React from "react";
-
 import { ProductList } from "../../components";
-import { newProducts } from "../../backend/db/newProducts";
+import { useCommonData } from "../../context/dataContext";
 import { useDocumentTitle } from "../../utils";
 import "./product.css";
 
 const ProductsPage = () => {
 	useDocumentTitle("Products");
+
+	const { products } = useCommonData();
 	return (
 		<main className="main prd-main">
 			<aside className="prd-aside gray-bg">
@@ -140,7 +141,7 @@ const ProductsPage = () => {
 				</section>
 			</aside>
 			<article className="prd-article gray-bg">
-				<ProductList products={newProducts} />
+				<ProductList products={products} />
 			</article>
 		</main>
 	);
