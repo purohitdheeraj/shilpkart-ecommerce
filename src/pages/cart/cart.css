@@ -1,0 +1,26 @@
+.cart-container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	list-style: none;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+article li {
+	margin-bottom: 1rem;
+}
+
+.cart_buttons button {
+	width: 85%;
+  margin: 1rem;
+}
+
+.card-cover{
+  background: var(--NEUTRAL);
+}
+
+.quantity .input-field{
+  width: 5rem;
+  padding: 1rem;
+}
