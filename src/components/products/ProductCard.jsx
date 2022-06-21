@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { UseCartContext } from "../../context/cartContext";
 import { useWishlistContext } from "../../context/wislistContext";
-import './productCard.css'
+import "./productCard.css";
 const ProductCard = ({
 	product,
 	wishlistButtonProp,
@@ -15,6 +15,7 @@ const ProductCard = ({
 		description,
 		imgSrc,
 		ratings,
+		availability,
 	} = product;
 
 	const {
@@ -102,18 +103,19 @@ const ProductCard = ({
 						</button>
 					)}
 
-					<div className="text-left">
-						Price:{" "}
-						<span>
-							<i className="fa fa-rupee"></i>
+					<div className="text-left ">
+						<h4>Price:</h4> {"  "}
+						<span className="p-sm">
+							<i className="fa fa-inr"></i>
 						</span>
 						<span className="price-tag">
-							{price}/-
+							{price.toLocaleString("en-IN")}
+							/-
 						</span>
 					</div>
-					<div className="text-right">
+					<span className="text-right high">
 						{ratings}
-					</div>
+					</span>
 				</div>
 				<div className="card-cover badge-container">
 					{homeSpaProp ? (
@@ -128,8 +130,8 @@ const ProductCard = ({
 						</NavLink>
 					)}
 
-					<div className="badge badge-top">
-						New
+					<div className="badge  badge-top">
+						<span>{availability.badge}</span>
 					</div>
 				</div>
 			</li>
