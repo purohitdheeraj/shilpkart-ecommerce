@@ -1,12 +1,11 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import { UseCartContext } from "../../context/cartContext";
-import { useWishlistContext } from "../../context/wislistContext";
+import { NavLink } from "react-router-dom";
+import { CartActions } from "./cartActions";
 import "./productCard.css";
 import { WishListActions } from "./wishlistActions";
 const ProductCard = ({
 	product,
-	wishlistButtonProp,
+	classNameProp,
 	cartButtonProp,
 	homeSpaProp,
 }) => {
@@ -19,31 +18,11 @@ const ProductCard = ({
 		availability,
 	} = product;
 
-	const {
-		wishlistState,
-		wishlistDispatch,
-	} = useWishlistContext();
-
-	const { cart, dispatchToCart } = UseCartContext();
-
-
-
-	const CartStatus = cart.find(
-		(item) => item._id === product._id
-	);
-
-	const disableCart = CartStatus ? true : false;
-	const onClickCart = CartStatus ? (
-		<Link to="/cart" className="btn-cart">
-			Go To Cart
-		</Link>
-	) : (
-		"Add To Cart"
-	);
-
 	return (
 		<>
-			<li className="card text-center">
+			<li
+				className={`${classNameProp} card text-center`}
+			>
 				<div className="card-text">
 					<h6 className="h6">{title}</h6>
 
@@ -51,37 +30,12 @@ const ProductCard = ({
 						{description}
 					</p>
 
-					{cartButtonProp ? (
-						<button
-							className="btn btn-primary-outline"
-							onClick={() =>
-								dispatchToCart({
-									type:
-										"REMOVE_FROM_CART",
-									payload: product._id,
-								})
-							}
-						>
-							Remove From Cart
-						</button>
-					) : (
-						<button
-							disabled={disableCart}
-							className="btn btn-primary"
-							onClick={() =>
-								dispatchToCart({
-									type: "ADD_TO_CART",
-									payload: product,
-								})
-							}
-						>
-							{onClickCart}
-						</button>
-					)}
-
-					<WishListActions
+					<CartActions
 						product={product}
+						cartButtonProp={cartButtonProp}
 					/>
+
+					<WishListActions product={product} />
 
 					<div className="text-left ">
 						<h4>Price:</h4> {"  "}

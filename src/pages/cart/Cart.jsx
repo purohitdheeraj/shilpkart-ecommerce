@@ -1,11 +1,11 @@
 import React from "react";
 
-import { HorizontalCard } from "../../components/products/HorizontalCard";
 import { UseCartContext } from "../../context/cartContext";
 import { useDocumentTitle } from "../../utils";
 import "../Products/product.css";
 import "./cart.css";
 import { NavLink } from "react-router-dom";
+import { ProductCard } from "../../components/products/ProductCard";
 const Cart = () => {
 	useDocumentTitle("Cart");
 	const { cart } = UseCartContext();
@@ -16,8 +16,8 @@ const Cart = () => {
 				{cart.length > 0 ? (
 					<>
 						{cart.map((item) => (
-							<HorizontalCard
-								className="horizontal-card"
+							<ProductCard
+								classNameProp="card-horizontal"
 								key={item._id}
 								product={item}
 								cartButtonProp="Remove From Cart"

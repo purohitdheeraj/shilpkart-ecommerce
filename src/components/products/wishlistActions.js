@@ -3,11 +3,11 @@ import { useWishlistContext } from "../../context/wislistContext";
 
 export const WishListActions = ({ product }) => {
 	const {
-		wishlistState,
+		wishlistArr,
 		wishlistDispatch,
 	} = useWishlistContext();
 
-	const WishlistStatus = wishlistState.wishlist.find(
+	const WishlistStatus = wishlistArr.find(
 		(el) => el._id === product._id
 	);
 

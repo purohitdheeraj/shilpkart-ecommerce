@@ -5,10 +5,22 @@ import { useWishlistContext } from "../../context/wislistContext";
 import logo from "./logo.jpg";
 
 const Navbar = () => {
-	const { wishlistState } = useWishlistContext();
+	const { wishlistArr } = useWishlistContext();
 	const { cart } = UseCartContext();
 
 	const text = "SHILPKART शिल्पकार्त";
+
+	const wishlistBadge = wishlistArr.length > 0 && (
+		<span className="btn-primary badge badge-icon badge-status-number">
+			{wishlistArr.length}
+		</span>
+	);
+
+	const cartBadge = cart.length > 0 && (
+		<span className="btn-primary badge badge-icon badge-status-number">
+			{cart.length}
+		</span>
+	);
 
 	return (
 		<nav className="navbar ">
@@ -55,13 +67,7 @@ const Navbar = () => {
 							<span>
 								<div className="badge__container">
 									<i className="fa fa-heart fa-2x fa-fw"></i>
-									<span className="btn-primary badge badge-icon badge-status-number">
-										{
-											wishlistState
-												.wishlist
-												.length
-										}
-									</span>
+									{wishlistBadge}
 								</div>
 							</span>
 						</NavLink>
@@ -71,9 +77,7 @@ const Navbar = () => {
 							<span>
 								<div className="badge__container">
 									<i className="fas fa-shopping-cart fa-2x fa-fw"></i>
-									<span className="btn-primary badge badge-icon badge-status-number">
-										{cart.length}
-									</span>
+									{cartBadge}
 								</div>
 							</span>
 						</NavLink>

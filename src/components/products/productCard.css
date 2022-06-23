@@ -1,11 +1,19 @@
 .card .card-cover img {
-	height: auto;
+	height: 100%;
 	object-fit: fill;
 }
 
-.btn .btn-cart {
+.card .card-cover {
+	max-width: 24rem;
+}
+
+.card-text .btn-cart {
 	text-decoration: none;
 	color: var(--NEUTRAL);
 }
 
-
+.card-horizontal {
+	min-width: 48rem;
+	max-width: 64rem;
+	width: unset;
+}
