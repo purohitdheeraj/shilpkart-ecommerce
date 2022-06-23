@@ -1,8 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { UseCartContext } from "../../context/cartContext";
 import { useWishlistContext } from "../../context/wislistContext";
 import "./productCard.css";
+import { WishListActions } from "./wishlistActions";
 const ProductCard = ({
 	product,
 	wishlistButtonProp,
@@ -25,17 +26,20 @@ const ProductCard = ({
 
 	const { cart, dispatchToCart } = UseCartContext();
 
-	const WishlistStatus = wishlistState.wishlist.find(
-		(el) => el._id === product._id
-	);
 
-	const disableWishlist = WishlistStatus ? true : false;
 
 	const CartStatus = cart.find(
 		(item) => item._id === product._id
 	);
 
 	const disableCart = CartStatus ? true : false;
+	const onClickCart = CartStatus ? (
+		<Link to="/cart" className="btn-cart">
+			Go To Cart
+		</Link>
+	) : (
+		"Add To Cart"
+	);
 
 	return (
 		<>
@@ -71,37 +75,13 @@ const ProductCard = ({
 								})
 							}
 						>
-							Add To Cart
+							{onClickCart}
 						</button>
 					)}
 
-					{wishlistButtonProp ? (
-						<button
-							className="btn btn-primary-outline"
-							onClick={() =>
-								wishlistDispatch({
-									type:
-										"REMOVE_FROM_WISHLIST",
-									payload: product._id,
-								})
-							}
-						>
-							{wishlistButtonProp}
-						</button>
-					) : (
-						<button
-							className="btn btn-primary-outline"
-							disabled={disableWishlist}
-							onClick={() =>
-								wishlistDispatch({
-									type: "ADD_TO_WISHLIST",
-									payload: product,
-								})
-							}
-						>
-							Add To Wishlist
-						</button>
-					)}
+					<WishListActions
+						product={product}
+					/>
 
 					<div className="text-left ">
 						<h4>Price:</h4> {"  "}

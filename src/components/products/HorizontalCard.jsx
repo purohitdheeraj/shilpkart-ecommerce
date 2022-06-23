@@ -2,7 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { UseCartContext } from "../../context/cartContext";
 import { useWishlistContext } from "../../context/wislistContext";
+
 import "./productCard.css";
+import { WishListActions } from "./wishlistActions";
 const HorizontalCard = ({
 	product,
 	wishlistButtonProp,
@@ -49,20 +51,14 @@ const HorizontalCard = ({
 					<div className="quantity text-left">
 						<h4>Quantity:</h4>
 
-						<button>
-							+
-						</button>
-						
+						<button>+</button>
+
 						<input
 							className="input-field"
 							type="number"
 						/>
 
-						<button>
-							
-							-
-							
-						</button>
+						<button>-</button>
 					</div>
 
 					<div className="text-left ">
@@ -123,35 +119,9 @@ const HorizontalCard = ({
 							</button>
 						)}
 
-						{wishlistButtonProp ? (
-							<button
-								className="btn btn-primary-outline"
-								onClick={() =>
-									wishlistDispatch({
-										type:
-											"REMOVE_FROM_WISHLIST",
-										payload:
-											product._id,
-									})
-								}
-							>
-								{wishlistButtonProp}
-							</button>
-						) : (
-							<button
-								className="btn btn-primary-outline"
-								disabled={disableWishlist}
-								onClick={() =>
-									wishlistDispatch({
-										type:
-											"ADD_TO_WISHLIST",
-										payload: product,
-									})
-								}
-							>
-								Add To Wishlist
-							</button>
-						)}
+						<WishListActions
+							product={product}
+						/>
 					</div>
 				</div>
 			</li>

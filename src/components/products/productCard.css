@@ -2,3 +2,10 @@
 	height: auto;
 	object-fit: fill;
 }
+
+.btn .btn-cart {
+	text-decoration: none;
+	color: var(--NEUTRAL);
+}
+
+
