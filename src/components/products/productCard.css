@@ -3,7 +3,7 @@
 	object-fit: fill;
 }
 
-.card .card-cover {
+.card-horizontal .card-cover {
 	max-width: 24rem;
 }
 
