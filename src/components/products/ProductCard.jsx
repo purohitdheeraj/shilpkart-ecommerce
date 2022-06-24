@@ -1,11 +1,13 @@
 import React from "react";
-import { UseCartContext } from "../../context/cartContext";
-import { useWishlistContext } from "../../context/wislistContext";
-
+import { NavLink } from "react-router-dom";
+import { CartActions } from "./cartActions";
+import "./productCard.css";
+import { WishListActions } from "./wishlistActions";
 const ProductCard = ({
 	product,
-	wishlistButtonProp,
+	classNameProp,
 	cartButtonProp,
+	homeSpaProp,
 }) => {
 	const {
 		title,
@@ -13,113 +15,72 @@ const ProductCard = ({
 		description,
 		imgSrc,
 		ratings,
+		availability,
 	} = product;
-
-	const {
-		wishlistState,
-		wishlistDispatch,
-	} = useWishlistContext();
-
-	const { cart, dispatchToCart } = UseCartContext();
-
-	const WishlistStatus = wishlistState.wishlist.find(
-		(el) => el._id === product._id
-	);
-
-	const disableWishlist = WishlistStatus ? true : false;
-
-	const CartStatus = cart.find(
-		(item) => item._id === product._id
-	);
-	const disableCart = CartStatus ? true : false;
 
 	return (
 		<>
-			<li className="card text-center">
+			<li
+				className={`${classNameProp} card text-center`}
+			>
 				<div className="card-text">
-					<h6 className="h6">
-						{title}
-						{/* <NavLink to={`./${product._id}`}>
-						</NavLink> */}
-					</h6>
+					<h6 className="h6">{title}</h6>
 
 					<p className="p-sm text-left">
 						{description}
 					</p>
 
-					{cartButtonProp ? (
-						<button
-							className="btn btn-primary-outline"
-							onClick={() =>
-								dispatchToCart({
-									type:
-										"REMOVE_FROM_CART",
-									payload: product._id,
-								})
-							}
-						>
-							Remove From Cart
-						</button>
-					) : (
-						<button
-							disabled={disableCart}
-							className="btn btn-primary"
-							onClick={() =>
-								dispatchToCart({
-									type: "ADD_TO_CART",
-									payload: product,
-								})
-							}
-						>
-							Add To Cart
-						</button>
+					<CartActions
+						product={product}
+						cartButtonProp={cartButtonProp}
+					/>
+
+					<WishListActions product={product} />
+
+					{cartButtonProp && (
+						<div className="text-left">
+							<div className="quantity">
+								Quantity:{" "}
+								<span>
+									<input
+										className="input-field"
+										type="number"
+									/>
+								</span>
+							</div>
+						</div>
 					)}
 
-					{wishlistButtonProp ? (
-						<button
-							className="btn btn-primary-outline"
-							onClick={() =>
-								wishlistDispatch({
-									type:
-										"REMOVE_FROM_WISHLIST",
-									payload: product._id,
-								})
-							}
-						>
-							{wishlistButtonProp}
-						</button>
-					) : (
-						<button
-							className="btn btn-primary-outline"
-							disabled={disableWishlist}
-							onClick={() =>
-								wishlistDispatch({
-									type: "ADD_TO_WISHLIST",
-									payload: product,
-								})
-							}
-						>
-							Add To Wishlist
-						</button>
-					)}
-
-					<div className="text-left">
-						Price:{" "}
-						<span>
-							<i className="fa fa-rupee"></i>
+					<div className="text-left ">
+						<h4>Price:</h4> {"  "}
+						<span className="p-sm">
+							<i className="fa fa-inr"></i>
 						</span>
 						<span className="price-tag">
-							{price}/-
+							{price.toLocaleString("en-IN")}
+							/-
 						</span>
 					</div>
-					<div className="text-right">
+
+					<span className="text-right high">
 						{ratings}
-					</div>
+					</span>
 				</div>
 				<div className="card-cover badge-container">
-					<img src={imgSrc} alt={title} />
-					<div className="badge badge-top">
-						New
+					{homeSpaProp ? (
+						<NavLink
+							to={`./products/${product._id}`}
+						>
+							<img src={imgSrc} alt={title} />
+						</NavLink>
+					) : (
+						<NavLink to={`./${product._id}`}>
+							<img src={imgSrc} alt={title} />
+						</NavLink>
+					)}
+
+					<div className="badge  badge-top">
+						<span>{availability.badge}</span>
 					</div>
 				</div>
 			</li>

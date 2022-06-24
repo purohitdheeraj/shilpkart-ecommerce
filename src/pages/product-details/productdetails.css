@@ -1,0 +1,39 @@
+article .spa-container {
+	align-items: stretch;
+	justify-content: center;
+}
+
+.spa-actions {
+	flex: 0 1 30%;
+	margin: 1rem;
+}
+
+.spa-actions button,
+.spa-actions .btn-cart {
+	width: 100%;
+}
+
+.spa-table {
+	flex: 1 1 100%;
+}
+
+.spa-cover,
+.spa-info {
+	flex: 1 1 40%;
+	padding: 4rem;
+	border: 1px solid;
+	margin: 2rem;
+	box-shadow: var(--BOX-SHADOW);
+}
+
+.spa-info {
+	border: 1px solid;
+}
+
+.spa-info .list-style-none {
+	padding-inline-start: 0;
+}
+
+.quantity .input-field {
+	width: 8rem;
+}

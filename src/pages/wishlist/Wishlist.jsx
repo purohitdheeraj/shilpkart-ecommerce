@@ -6,20 +6,18 @@ import { ProductCard } from "../../components/products/ProductCard";
 
 const Wishlist = () => {
 	useDocumentTitle("Wishlist");
-	const { wishlistState } = useWishlistContext();
-
-	const { wishlist } = wishlistState;
+	const { wishlistArr } = useWishlistContext();
 
 	return (
 		<div>
-			{wishlist.length > 0 ? (
+			{wishlistArr.length > 0 ? (
 				<>
 					<div className="text-center">
-						Your Wishlist has {wishlist.length}{" "}
-						items ✅
+						Your Wishlist has{" "}
+						{wishlistArr.length} items ✅
 					</div>
 					<div className="card-container list-style-none">
-						{wishlist.map((el) => {
+						{wishlistArr.map((el) => {
 							return (
 								<ProductCard
 									key={el._id}

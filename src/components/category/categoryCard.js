@@ -5,11 +5,11 @@ export const CategoryCard = ({ category }) => {
 	const { imgSrc, categoryName } = category;
 
 	return (
-		<div class="type flex-column">
+		<div className="type flex-column">
 			<Link to="/products">
 				<img src={imgSrc} alt={categoryName} />
 			</Link>
-			<span class="type-text text-center">
+			<span className="type-text text-center">
 				{categoryName}
 			</span>
 		</div>

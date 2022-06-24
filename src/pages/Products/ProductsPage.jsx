@@ -8,6 +8,7 @@ const ProductsPage = () => {
 	useDocumentTitle("Products");
 
 	const { products } = useCommonData();
+	
 	return (
 		<main className="main prd-main">
 			<aside className="prd-aside gray-bg">

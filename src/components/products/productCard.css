@@ -1,0 +1,24 @@
+.card .card-cover img {
+	height: 100%;
+	object-fit: fill;
+}
+
+.card-horizontal .card-cover {
+	max-width: 28rem;
+}
+
+.card-text .btn-cart {
+	text-decoration: none;
+	color: var(--NEUTRAL);
+}
+
+.card-horizontal {
+	min-width: 48rem;
+	max-width: 64rem;
+	width: unset;
+}
+
+.checkout .price {
+	display: flex;
+	justify-content: space-between;
+}

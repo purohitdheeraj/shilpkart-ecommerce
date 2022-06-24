@@ -44,12 +44,13 @@ export const Home = () => {
 				</h2>
 				<section className="row new-products">
 					<article className="prd-article flex-column">
-						<ul className="card-container list-style-none">
+						<ul className="card-container list-style-none ">
 							{products &&
 								products.map((item) => (
 									<ProductCard
 										key={item._id}
 										product={item}
+										homeSpaProp="products"
 									/>
 								))}
 						</ul>
@@ -57,7 +58,7 @@ export const Home = () => {
 						<p className="text-center">
 							<Link
 								to="/products"
-								className="btn btn-secondary-outline"
+								className="btn btn-primary-outline"
 							>
 								View All Products
 							</Link>

@@ -20,13 +20,13 @@ const WishlistProvider = ({ children }) => {
 		initialState
 	);
 
+	const valueProvider = {
+		wishlistArr: wishlistState.wishlist,
+		wishlistDispatch,
+	};
+
 	return (
-		<WishlistContext.Provider
-			value={{
-				wishlistState,
-				wishlistDispatch,
-			}}
-		>
+		<WishlistContext.Provider value={valueProvider}>
 			{children}
 		</WishlistContext.Provider>
 	);

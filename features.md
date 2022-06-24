@@ -1,6 +1,5 @@
-[] dimensions of products, outOfStock, home delivery
-[] authentication
-[] api calls
-[] wishlist
-[] cart
-[] notification
+-   [] authentication
+-   [] api calls
+-   [] wishlist
+-   [] cart
+-   [] notification
