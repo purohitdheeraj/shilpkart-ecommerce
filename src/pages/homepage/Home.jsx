@@ -58,7 +58,7 @@ export const Home = () => {
 						<p className="text-center">
 							<Link
 								to="/products"
-								className="btn btn-secondary-outline"
+								className="btn btn-primary-outline"
 							>
 								View All Products
 							</Link>

@@ -1,10 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import { UseCartContext } from "../../context/cartContext";
 import { useDocumentTitle } from "../../utils";
 import "../Products/product.css";
 import "./cart.css";
-import { NavLink } from "react-router-dom";
 import { ProductCard } from "../../components/products/ProductCard";
 const Cart = () => {
 	useDocumentTitle("Cart");
@@ -42,6 +42,7 @@ const Cart = () => {
 											title,
 											price,
 											_id,
+											specification,
 										}) => (
 											<div
 												key={_id}
@@ -53,6 +54,21 @@ const Cart = () => {
 														:{" "}
 													</strong>
 													{title}
+												</p>
+												<p>
+													<strong>
+														Description:
+													</strong>
+													{
+														specification.material
+													}{" "}
+													{
+														specification.weight
+													}{" "}
+													Kgs{" "}
+													{
+														specification.dimensions
+													}
 												</p>
 												<p className="price">
 													<span>
