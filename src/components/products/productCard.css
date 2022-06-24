@@ -4,7 +4,7 @@
 }
 
 .card-horizontal .card-cover {
-	max-width: 24rem;
+	max-width: 28rem;
 }
 
 .card-text .btn-cart {
@@ -16,4 +16,9 @@
 	min-width: 48rem;
 	max-width: 64rem;
 	width: unset;
+}
+
+.checkout .price {
+	display: flex;
+	justify-content: space-between;
 }

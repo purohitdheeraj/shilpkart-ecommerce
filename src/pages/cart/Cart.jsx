@@ -41,24 +41,29 @@ const Cart = () => {
 										({
 											title,
 											price,
+											_id,
 										}) => (
-											<div className="product">
+											<div
+												key={_id}
+												className="product checkout"
+											>
 												<p className="name">
-													Product
-													:{" "}
+													<strong>
+														Product
+														:{" "}
+													</strong>
 													{title}
 												</p>
 												<p className="price">
-													<b>
-														Price
-														:
-													</b>{" "}
-													{price.toLocaleString(
-														"en-IN"
-													)}
-													<strong>
-														X
-													</strong>
+													<span>
+														<strong className="text-left">
+															Price:
+														</strong>
+														{price.toLocaleString(
+															"en-IN"
+														)}
+													</span>
+
 													<span className="text-right">
 														1
 													</span>
@@ -110,7 +115,7 @@ const Cart = () => {
 									</div>
 									<NavLink
 										to="/products"
-										className="btn btn-secondary"
+										className="btn btn-primary-outline"
 									>
 										Show me Awesome
 										Products!

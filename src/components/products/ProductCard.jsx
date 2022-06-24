@@ -37,6 +37,20 @@ const ProductCard = ({
 
 					<WishListActions product={product} />
 
+					{cartButtonProp && (
+						<div className="text-left">
+							<div className="quantity">
+								Quantity:{" "}
+								<span>
+									<input
+										className="input-field"
+										type="number"
+									/>
+								</span>
+							</div>
+						</div>
+					)}
+
 					<div className="text-left ">
 						<h4>Price:</h4> {"  "}
 						<span className="p-sm">
@@ -47,6 +61,7 @@ const ProductCard = ({
 							/-
 						</span>
 					</div>
+
 					<span className="text-right high">
 						{ratings}
 					</span>
