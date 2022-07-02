@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { UseCartContext } from "../../context/cartContext";
 
@@ -11,6 +11,10 @@ export const CartActions = ({
 	const CartStatus = cart.find(
 		(item) => item._id === product._id
 	);
+
+	useEffect(() => {
+		localStorage.setItem("cart", JSON.stringify(cart));
+	}, [cart]);
 
 	const disableCart = CartStatus ? true : false;
 	const onClickCart = CartStatus ? (

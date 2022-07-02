@@ -15,8 +15,12 @@
 	padding: 8px;
 }
 
-.navbar-left{
+.navbar-left {
 	gap: 1rem;
+}
+
+.navbar-right {
+	margin-inline-end: 2%;
 }
 
 body {

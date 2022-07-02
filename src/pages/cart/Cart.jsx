@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import { UseCartContext } from "../../context/cartContext";
@@ -9,6 +9,7 @@ import { ProductCard } from "../../components/products/ProductCard";
 const Cart = () => {
 	useDocumentTitle("Cart");
 	const { cart } = UseCartContext();
+
 
 	return (
 		<main className="cart-container">
@@ -87,7 +88,7 @@ const Cart = () => {
 											</div>
 										)
 									)}
-									<div className="subtotal">
+									<div className="subtotal checkout-subtotal">
 										<small className="text-left p-md">
 											<strong>
 												Total:
@@ -107,6 +108,11 @@ const Cart = () => {
 													"en-IN"
 												)}
 										</small>
+
+										<small className="text-right">
+											Total Items:{" "}
+											{cart.length}
+										</small>
 									</div>
 
 									<span
@@ -125,7 +131,7 @@ const Cart = () => {
 											Today's Discount
 											(5%)
 										</h3>
-										<NavLink to="/products">
+										<NavLink to="/">
 											Buy Now
 										</NavLink>
 									</div>

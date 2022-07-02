@@ -6,7 +6,9 @@ import React, {
 import { CartReducer } from "../reducer";
 
 const initialState = {
-	cart: [],
+	cart: localStorage.getItem("cart")
+		? JSON.parse(localStorage.getItem("cart"))
+		: [],
 };
 
 const CartContext = createContext();

@@ -11,7 +11,9 @@ const useWishlistContext = () =>
 	useContext(WishlistContext);
 
 const initialState = {
-	wishlist: [],
+	wishlist: localStorage.getItem("wishlist")
+		? JSON.parse(localStorage.getItem("wishlist"))
+		: [],
 };
 
 const WishlistProvider = ({ children }) => {

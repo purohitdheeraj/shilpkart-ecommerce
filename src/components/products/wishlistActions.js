@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useWishlistContext } from "../../context/wislistContext";
 
 export const WishListActions = ({ product }) => {
@@ -7,13 +7,20 @@ export const WishListActions = ({ product }) => {
 		wishlistDispatch,
 	} = useWishlistContext();
 
+	useEffect(() => {
+		localStorage.setItem(
+			"wishlist",
+			JSON.stringify(wishlistArr)
+		);
+	}, [wishlistArr]);
+
 	const WishlistStatus = wishlistArr.find(
 		(el) => el._id === product._id
 	);
 
 	const disableWishlist = WishlistStatus ? true : false;
 
-	return WishlistStatus ? (
+	return disableWishlist ? (
 		<button
 			className="btn btn-primary-outline"
 			onClick={() =>
