@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { useWishlistContext } from "../../context/wislistContext";
 import { CartActions } from "./cartActions";
 import "./productCard.css";
 import { WishListActions } from "./wishlistActions";
@@ -17,6 +18,8 @@ const ProductCard = ({
 		ratings,
 		availability,
 	} = product;
+
+	const { wishlistArr } = useWishlistContext();
 
 	return (
 		<>

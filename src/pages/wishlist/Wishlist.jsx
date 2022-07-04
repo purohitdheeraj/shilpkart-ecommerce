@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useWishlistContext } from "../../context/wislistContext";
 import { useDocumentTitle } from "../../utils";
@@ -7,6 +7,8 @@ import { ProductCard } from "../../components/products/ProductCard";
 const Wishlist = () => {
 	useDocumentTitle("Wishlist");
 	const { wishlistArr } = useWishlistContext();
+
+	
 
 	return (
 		<div>
@@ -22,7 +24,6 @@ const Wishlist = () => {
 								<ProductCard
 									key={el._id}
 									product={el}
-									wishlistButtonProp="Remove From Wishlist"
 								/>
 							);
 						})}

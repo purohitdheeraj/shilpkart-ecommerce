@@ -12,38 +12,52 @@ export const WishListActions = ({ product }) => {
 			"wishlist",
 			JSON.stringify(wishlistArr)
 		);
+		// console.log(wishlistArr);
 	}, [wishlistArr]);
 
-	const WishlistStatus = wishlistArr.find(
+	// bug : one be less error
+	const wishlistCheck = localStorage.getItem("wishlist")
+		? JSON.parse(localStorage.getItem("wishlist"))
+		: wishlistArr;
+
+	const isProductInWishlist = wishlistArr.findIndex(
 		(el) => el._id === product._id
 	);
 
-	const disableWishlist = WishlistStatus ? true : false;
+	console.log(
+		"actions",
+		localStorage.getItem("wishlist")
+			? JSON.parse(localStorage.getItem("wishlist"))
+			: wishlistArr
+	);
 
-	return disableWishlist ? (
-		<button
-			className="btn btn-primary-outline"
-			onClick={() =>
-				wishlistDispatch({
-					type: "REMOVE_FROM_WISHLIST",
-					payload: product._id,
-				})
-			}
-		>
-			Remove From Wishlist
-		</button>
-	) : (
-		<button
-			className="btn btn-primary-outline"
-			disabled={disableWishlist}
-			onClick={() =>
-				wishlistDispatch({
-					type: "ADD_TO_WISHLIST",
-					payload: product,
-				})
-			}
-		>
-			Add To Wishlist
+	return (
+		<button className="btn btn-primary-outline">
+			{isProductInWishlist !== -1 ? (
+				<i
+					onClick={() =>
+						wishlistDispatch({
+							type: "REMOVE_FROM_WISHLIST",
+							payload: product._id,
+						})
+					}
+				>
+					{" "}
+					Remove From Wishlist
+				</i>
+			) : (
+				<i
+					onClick={() =>
+						wishlistDispatch({
+							type: "ADD_TO_WISHLIST",
+							payload: product,
+						})
+					}
+				>
+					{" "}
+					Add To Wishlist
+				</i>
+			)}
 		</button>
 	);
 };

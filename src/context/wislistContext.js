@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
 	createContext,
 	useContext,
@@ -26,6 +26,8 @@ const WishlistProvider = ({ children }) => {
 		wishlistArr: wishlistState.wishlist,
 		wishlistDispatch,
 	};
+
+	
 
 	return (
 		<WishlistContext.Provider value={valueProvider}>
