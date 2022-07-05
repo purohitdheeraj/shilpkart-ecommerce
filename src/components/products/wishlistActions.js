@@ -3,8 +3,8 @@ import { useWishlistContext } from "../../context/wislistContext";
 
 export const WishListActions = ({ product }) => {
 	const {
-		wishlistArr,
 		wishlistDispatch,
+		wishlistArr,
 	} = useWishlistContext();
 
 	useEffect(() => {
@@ -12,23 +12,10 @@ export const WishListActions = ({ product }) => {
 			"wishlist",
 			JSON.stringify(wishlistArr)
 		);
-		// console.log(wishlistArr);
 	}, [wishlistArr]);
-
-	// bug : one be less error
-	const wishlistCheck = localStorage.getItem("wishlist")
-		? JSON.parse(localStorage.getItem("wishlist"))
-		: wishlistArr;
 
 	const isProductInWishlist = wishlistArr.findIndex(
 		(el) => el._id === product._id
-	);
-
-	console.log(
-		"actions",
-		localStorage.getItem("wishlist")
-			? JSON.parse(localStorage.getItem("wishlist"))
-			: wishlistArr
 	);
 
 	return (
@@ -42,7 +29,6 @@ export const WishListActions = ({ product }) => {
 						})
 					}
 				>
-					{" "}
 					Remove From Wishlist
 				</i>
 			) : (
@@ -54,7 +40,6 @@ export const WishListActions = ({ product }) => {
 						})
 					}
 				>
-					{" "}
 					Add To Wishlist
 				</i>
 			)}

@@ -2,13 +2,10 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { UseCartContext } from "../../context/cartContext";
 
-export const CartActions = ({
-	product,
-	cartButtonProp,
-}) => {
+export const CartActions = ({ product, classNameProp }) => {
 	const { cart, dispatchToCart } = UseCartContext();
 
-	const CartStatus = cart.find(
+	const isProductInCart = cart.findIndex(
 		(item) => item._id === product._id
 	);
 
@@ -16,44 +13,35 @@ export const CartActions = ({
 		localStorage.setItem("cart", JSON.stringify(cart));
 	}, [cart]);
 
-	const disableCart = CartStatus ? true : false;
-	const onClickCart = CartStatus ? (
-		<Link
-			to="/cart"
-			className="btn-cart btn btn-primary"
-		>
-			Go To Cart
-		</Link>
-	) : (
-		"Add To Cart"
-	);
-	return CartStatus ? (
-		cartButtonProp ? (
-			<button
-				className="btn btn-primary-outline"
-				onClick={() =>
-					dispatchToCart({
-						type: "REMOVE_FROM_CART",
-						payload: product._id,
-					})
-				}
-			>
-				Remove From Cart
-			</button>
-		) : (
-			onClickCart
-		)
-	) : (
-		<button
-			className="btn btn-primary"
-			onClick={() =>
-				dispatchToCart({
-					type: "ADD_TO_CART",
-					payload: product,
-				})
-			}
-		>
-			{onClickCart}
+	return (
+		<button className="btn btn-primary">
+			{isProductInCart === -1 ? (
+				<i
+					onClick={() =>
+						dispatchToCart({
+							type: "ADD_TO_CART",
+							payload: product,
+						})
+					}
+				>
+					Add To Cart
+				</i>
+			) : classNameProp ? (
+				<i
+					onClick={() =>
+						dispatchToCart({
+							type: "REMOVE_FROM_CART",
+							payload: product._id,
+						})
+					}
+				>
+					Remove From Cart
+				</i>
+			) : (
+				<Link className="btn-cart btn" to="/cart">
+					<i>Go To Cart</i>
+				</Link>
+			)}
 		</button>
 	);
 };

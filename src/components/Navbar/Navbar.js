@@ -8,8 +8,6 @@ const Navbar = () => {
 	const { wishlistArr } = useWishlistContext();
 	const { cart } = UseCartContext();
 
-	const text = "SHILPKART शिल्पकार्त";
-
 	const wishlistBadge = wishlistArr.length > 0 && (
 		<span className="btn-primary badge badge-icon badge-status-number">
 			{wishlistArr.length}

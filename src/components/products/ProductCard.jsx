@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { useWishlistContext } from "../../context/wislistContext";
+
 import { CartActions } from "./cartActions";
 import "./productCard.css";
 import { WishListActions } from "./wishlistActions";
-const ProductCard = ({
-	product,
-	classNameProp,
-	cartButtonProp,
-	homeSpaProp,
-}) => {
+const ProductCard = ({ product, classNameProp }) => {
 	const {
+		_id,
 		title,
 		price,
 		description,
@@ -18,8 +14,6 @@ const ProductCard = ({
 		ratings,
 		availability,
 	} = product;
-
-	const { wishlistArr } = useWishlistContext();
 
 	return (
 		<>
@@ -33,17 +27,14 @@ const ProductCard = ({
 						{description}
 					</p>
 
-					<CartActions
-						product={product}
-						cartButtonProp={cartButtonProp}
-					/>
+					<CartActions product={product} classNameProp={classNameProp} />
 
 					<WishListActions product={product} />
 
-					{cartButtonProp && (
+					{classNameProp && (
 						<div className="text-left">
 							<div className="quantity">
-								Quantity:{" "}
+								Quantity:
 								<span>
 									<input
 										className="input-field"
@@ -70,17 +61,9 @@ const ProductCard = ({
 					</span>
 				</div>
 				<div className="card-cover badge-container">
-					{homeSpaProp ? (
-						<NavLink
-							to={`./products/${product._id}`}
-						>
-							<img src={imgSrc} alt={title} />
-						</NavLink>
-					) : (
-						<NavLink to={`./${product._id}`}>
-							<img src={imgSrc} alt={title} />
-						</NavLink>
-					)}
+					<NavLink to={`/products/${_id}`}>
+						<img src={imgSrc} alt={title} />
+					</NavLink>
 
 					<div className="badge  badge-top">
 						<span>{availability.badge}</span>

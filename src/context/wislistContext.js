@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useState } from "react";
 import {
 	createContext,
 	useContext,
@@ -22,12 +22,14 @@ const WishlistProvider = ({ children }) => {
 		initialState
 	);
 
+	const [wishlistLocal, setWishlistLocal] = useState([]);
+
 	const valueProvider = {
 		wishlistArr: wishlistState.wishlist,
 		wishlistDispatch,
+		wishlistLocal,
+		setWishlistLocal,
 	};
-
-	
 
 	return (
 		<WishlistContext.Provider value={valueProvider}>
