@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Footer } from "./components";
+import { Navbar, Footer, RequireAuth } from "./components";
 import {
 	About,
 	Cart,
@@ -15,8 +15,11 @@ import {
 	User,
 } from "./pages";
 import "./App.css";
+import { useAuth } from "./context/authContext";
 
 function App() {
+	const { isLoggedIn } = useAuth();
+
 	return (
 		<div className="container">
 			<Navbar />
@@ -37,12 +40,22 @@ function App() {
 				<Route path="*" element={<NotFound />} />
 
 				{/* Private Routes */}
-				<Route path="/user" element={<User />} />
-				<Route path="/cart" element={<Cart />} />
-				<Route
-					path="/wishlist"
-					element={<Wishlist />}
-				/>
+				<Route element={<RequireAuth />}>
+					<Route
+						path="/cart"
+						element={<Cart />}
+					/>
+					<Route
+						path="/user"
+						element={<User />}
+					/>
+
+					<Route
+						path="/wishlist"
+						element={<Wishlist />}
+					/>
+				</Route>
+
 				<Route path="/login" element={<Login />} />
 				<Route
 					path="/signup"

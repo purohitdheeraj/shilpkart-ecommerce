@@ -1,10 +1,17 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import {
+	NavLink,
+	useNavigate,
+	useLocation,
+} from "react-router-dom";
+import { useAuth } from "../../context/authContext";
 import { useDocumentTitle } from "../../utils";
 
 export const Login = () => {
 	useDocumentTitle("Login");
-	let Navigate = useNavigate();
+	let navigate = useNavigate();
+	let location = useLocation();
+	const { setIsLoggedIn } = useAuth();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -12,11 +19,16 @@ export const Login = () => {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
+
+		let from =
+			(location && location.state.from.pathname) ||
+			"/";
 		if (
 			email === "purohitdheeraj@gmail.com" &&
 			password === "654321"
 		) {
-			Navigate("/user");
+			navigate(from, { replace: true });
+			setIsLoggedIn(true);
 			setError(false);
 			console.log("Success");
 		} else {
@@ -118,7 +130,7 @@ export const Login = () => {
 										?
 									</NavLink>
 								</form>
-								{error && <p> {error}</p>}
+								{error && <p> {error} </p>}
 							</div>
 						</div>{" "}
 					</div>
