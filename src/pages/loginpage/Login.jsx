@@ -1,9 +1,31 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDocumentTitle } from "../../utils";
 
 export const Login = () => {
 	useDocumentTitle("Login");
+	let Navigate = useNavigate();
+
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [error, setError] = useState(false);
+
+	const submitHandler = (e) => {
+		e.preventDefault();
+		if (
+			email === "purohitdheeraj@gmail.com" &&
+			password === "654321"
+		) {
+			Navigate("/user");
+			setError(false);
+			console.log("Success");
+		} else {
+			setError(
+				"wrong values there's a problem in logging In"
+			);
+		}
+	};
+
 	return (
 		<>
 			<main className="container">
@@ -14,7 +36,10 @@ export const Login = () => {
 							id="signupModal"
 						>
 							<div className="modal-content">
-								<form className="form-field flex-column">
+								<form
+									onSubmit={submitHandler}
+									className="form-field flex-column"
+								>
 									<h3>SIGN IN</h3>
 
 									<div className="input-wrapper flex-column">
@@ -29,6 +54,12 @@ export const Login = () => {
 											className="input-field input-field-unset"
 											type="text"
 											placeholder="Enter Your Email"
+											onChange={(e) =>
+												setEmail(
+													e.target
+														.value
+												)
+											}
 											required
 										/>
 
@@ -43,6 +74,12 @@ export const Login = () => {
 											className="input-field input-field-unset"
 											id="correct-input"
 											type="password"
+											onChange={(e) =>
+												setPassword(
+													e.target
+														.value
+												)
+											}
 											placeholder="*******"
 											required
 										/>
@@ -81,6 +118,7 @@ export const Login = () => {
 										?
 									</NavLink>
 								</form>
+								{error && <p> {error}</p>}
 							</div>
 						</div>{" "}
 					</div>

@@ -1,7 +1,6 @@
 import React from "react";
-import Mockman from "mockman-js";
 import { Routes, Route } from "react-router-dom";
-import { Navbar } from "./components";
+import { Navbar, Footer } from "./components";
 import {
 	About,
 	Cart,
@@ -13,8 +12,8 @@ import {
 	NotFound,
 	Mock,
 	ProductDetail,
+	User,
 } from "./pages";
-import { Footer } from "./components";
 import "./App.css";
 
 function App() {
@@ -23,23 +22,22 @@ function App() {
 			<Navbar />
 
 			<Routes>
+				{/* Public Routes */}
 				<Route path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
 				<Route
 					path="/products/*"
 					element={<ProductsPage />}
 				/>
-
 				{/* SPA */}
 				<Route
 					path="/products/:_id"
 					element={<ProductDetail />}
 				/>
 				<Route path="*" element={<NotFound />} />
-				<Route
-					path="/mockapi"
-					element={<Mockman />}
-				/>
+
+				{/* Private Routes */}
+				<Route path="/user" element={<User />} />
 				<Route path="/cart" element={<Cart />} />
 				<Route
 					path="/wishlist"

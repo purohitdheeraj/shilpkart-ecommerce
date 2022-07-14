@@ -10,6 +10,6 @@
 -   Notification , Finishing, Responsiveness, Accessibility
 -   Backend (Optional)
 
-
-
-* [ ] 
+*   [ ] Authentication Forms
+*   [ ] API - Data - hooks
+*   [ ] Features

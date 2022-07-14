@@ -11,6 +11,7 @@ const ProductsPage = () => {
 	
 	return (
 		<main className="main prd-main">
+		{/* abstraction possible ✅ */}
 			<aside className="prd-aside gray-bg">
 				<section className="row">
 					<fieldset>
